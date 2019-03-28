@@ -26,18 +26,25 @@ def main():
         response = "CON Enter a username and password separated by a colon (:)"
         
     if text != "":
-        parts = text.split(':')
-        username = parts[0].strip()
-        email = parts[1].strip()
-        users[username] = email
-        response = "END A confirmation will be sent via text."
+        if ":" in text:
+            parts = text.split(':')
+            username = parts[0].strip()
+            email = parts[1].strip()
+            users[username] = email
 
-        # send confirmation message
-        number = []
-        number.append(phone_number)
-        confirmationText = "You have been successfully registered!"
-        shortCode = "1635"
-        sms.send(confirmationText, number, shortCode, enqueue = False)
+            if not username == "" and not email == "" and "@" in email:
+                response = "END A confirmation will be sent via text."
+
+                # send confirmation message
+                number = []
+                number.append(phone_number)
+                confirmationText = "You have been successfully registered!"
+                shortCode = "1635"
+                sms.send(confirmationText, number, shortCode, enqueue = False)
+            else:
+                response = "END Invalid username or email"
+        else:
+            response = "END Incorrect format! Try again"
 
     return Response(response)
             
