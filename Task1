@@ -1,0 +1,12 @@
+file_name = "name.txt"   #stores the file name 
+file_data = ""           #oblect that store the data we want to retrive
+
+with open(file_name, encoding="UTF8") as fh:
+        file_data = fh.read().strip()  #srips the data so that the specific words can be identified
+
+name_list = file_data.split("\n")   #this line of code removes the white spsces and display the data in an array list
+
+for name in name_list:
+
+        if(name.lower().find('a') is not -1):   #this line of code converts the words into lower case and finds the words that are not -1 since thos are the ones not containing letter "a"
+                print(name)
