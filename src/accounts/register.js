@@ -1,48 +1,95 @@
-const express = require('express');
-const router = express.Router();
+const lodash = require('lodash');
+const jsonfile = require('jsonfile');
 
-// USSD routes
-router.get('/', function (req, res) {
-    res.render('ussd', res.locals.commonData);
-});
+const db = `./sessions/db.json`;
 
-router.post('/', (req, res) => {
-    // Read variables sent via POST from our SDK
-    const { sessionId, serviceCode, phoneNumber, text } = req.body;
+return account => {
+	account.state('register', {
+		run: () => {
+			const {
+				val,
+				args: { phoneNumber }
+			} = account;
 
-    let response = '';
+			const data = jsonfile.JSONFile.readFileSync(db);
 
-    if (text == '') {
-        // This is the first request. Note how we start the response with CON
-        response = `CON What would you like to check
-        1. My account
-        2. My phone number`;
-    } else if ( text == '1') {
-        // Business logic for first level response
-        response = `CON Choose account information you want to view
-        1. Account number
-        2. Account balance`;
-    } else if ( text == '2') {
-        // Business logic for first level response
-        // This is a terminal request. Note how we start the response with END
-        response = `END Your phone number is ${phoneNumber}`;
-    } else if ( text == '1*1') {
-        // This is a second level response where the user selected 1 in the first instance
-        const accountNumber = 'ACC100101';
-        // This is a terminal request. Note how we start the response with END
-        response = `END Your account number is ${accountNumber}`;
-    } else if ( text == '1*2') {
-        // This is a second level response where the user selected 1 in the first instance
-        const balance = 'KES 10,000';
-        // This is a terminal request. Note how we start the response with END
-        response = `END Your balance is ${balance}`;
-    }
+			jsonfile.JSONFile.writeFileSync(db, {
+				...data,
+				[`${phoneNumber}`]: {
+					username: val
+				}
+			});
 
-    // Print the response onto the page so that our SDK can read it
-    res.set('Content-Type: text/plain');
-    res.send(response);
-    // DONE!!!
-});
+			account.con(`Enter your email:`);
+		},
+		next: {
+			'*\\w+': 'register.pin'
+		}
+	});
 
+  account.state('register.pin', {
+		run: () => {
+			const {
+				val,
+				args: { phoneNumber }
+			} = account;
 
-module.exports = router;
+			const data = jsonfile.JSONFile.readFileSync(db);
+
+			jsonfile.JSONFile.writeFileSync(db, {
+				...data,
+				[`${phoneNumber}`]: {
+					...data[`${phoneNumber}`],
+					email: val
+				}
+			});
+
+			const { username } = data[`${phoneNumber}`];
+
+			account.con(`Hi ${username}! \nEnter your preferred 4-digit PIN:`);
+		},
+		next: {
+			'*\\d{4}': 'register.pin.confirm'
+		},
+		defaultNext: 'register.pin.invalidPIN'
+	});
+
+  account.state('register.pin.invalidPIN', {
+    run: () => {
+      account.con(`Invalid PIN provided. Try again.`);
+    },
+    next: {
+      '*\\d{4}': 'register.pin.confirm'
+    },
+    defaultNext: 'register.pin.invalidPIN'
+  });
+
+  account.state('register.pin.confirm', {
+    run: () => {
+      const {
+        val, args: { phoneNumber }
+      } = account;
+
+      const data = jsonfile.JSONFile.readFileSync(db);
+
+      jsonfile.JSONFile.writeFileSync(db, {
+        ...data,
+        [`${phoneNumber}`]: {
+          ...data[`${phoneNumber}`],
+          pin: val
+        }
+      });
+
+      const { username } = data[`${phoneNumber}`];
+
+      account.con(`Hi ${username}! \nEnter your preferred 4-digit PIN again:`);
+    },
+    next: {
+      '*\\d{4}': 'dashboard'
+    },
+    defaultNext: 'register.pin.invalidPIN'
+  });
+
+	module.exports = router;
+  return account;
+};
