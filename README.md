@@ -120,3 +120,15 @@ In case you have any questions, reach out [the team](mailto:talent@africastalkin
     `
     python findA.py
     `
+
+### Task2
+
+    ```
+    Dependencies
+        - Ngrok, body-parser, morgan, express, africanstalking
+
+    Running
+        - npm start
+        -./ngrok http 5000
+    ```
+    use the ngrok generated url

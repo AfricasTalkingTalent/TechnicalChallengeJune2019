@@ -19,7 +19,9 @@ app.get("*", (req, res) => {
 });
 
 app.post("*", (req, res) => {
+  // message to be sent
   const message = "Successfully registered";
+  // an array storing phone numbers
   const phoneNumbers = ["+254797240975"];
   const opts = {
     to: phoneNumbers,
@@ -31,9 +33,11 @@ app.post("*", (req, res) => {
     let res1 = `CON Enter your email`;
     res.send(res1);
   } else if (typeof text === "string") {
+    // Request for username
     let res2 = `CON Enter Username`;
     res.send(res2);
   } else if (typeof text === "string") {
+    // Sends a sms after registration
     sms
       .send(opts)
       .then(info => {
@@ -45,6 +49,7 @@ app.post("*", (req, res) => {
   }
 });
 
+// creating a local server
 const server = http.createServer(app);
 const port = 5000;
 
