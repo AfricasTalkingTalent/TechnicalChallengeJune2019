@@ -57,6 +57,3 @@ docDigestObj=FileDigest(os.listdir('sampleDocs'))
 print("FILES CONTAINING WORDS WITH A")
 for i in docDigestObj.checkFor_a(): # loop through returned list
     print(str(i))
-
-
-

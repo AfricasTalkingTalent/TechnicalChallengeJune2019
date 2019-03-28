@@ -7,5 +7,7 @@ africastalking.initialize(username, api_key)
 
 # Initialize service e.g. SMS
 sms = africastalking.SMS
-response = sms.send("Hello Message!", ["+254726782953"])
-print(response)
+
+# ussd service
+# communicate to user
+response = sms.send("Successful account registration", ["+254726782953"])
