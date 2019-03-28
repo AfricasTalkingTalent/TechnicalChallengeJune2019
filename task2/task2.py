@@ -14,8 +14,8 @@ africastalking.initialize(username, api_key)
 sms = africastalking.SMS
 
 def successmessage(username, email):
-    username=username.split('*')[-1]
-    email=email.split('*')[-1]
+    username=username.split('*')[-1] # split by asterisk and take last item this will be the username
+    email=email.split('*')[-1]# split by asterisk and take last item this will be the email
     # communicate to user
     response = sms.send("Successful account registration\n Your are receiving this message because you have signed up for an account at \n"+
     "JUNETALK Below are your details \n username:"+str(username)+"\n Email:"+str(email)+"\n Visit https://www.juntalk2019.com for more information", ["+254726782953"])
