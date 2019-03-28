@@ -26,7 +26,7 @@ results=list(map(find_a,files)) #mapping the find_a function to the list of file
 docs=[file for file in files if results[(files.index(file))] is True]
 
 if docs==[]:
-    print("No documents found containing 'a'. Did you input a valid file extension?")
+    print("No documents found containing 'a'.")
 else:
     for doc in docs:
         print(doc)
