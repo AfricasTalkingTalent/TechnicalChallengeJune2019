@@ -1,11 +1,13 @@
 
 ## HOW TO RUN
+The app is developed using the Django web framework. Here's how you can run it;
 
 ## method 1 (online app)
 
 The app is online - deployed on heroku. 
 The callback url is: https://at-ussdapp.herokuapp.com/callback/
-The registered ussd code is: \*384\*6854\#
+
+`The registered ussd code is: \*384\*6854\#`
 
 Open the Africa's Talking phone simulator and call the ussd code *384*6854#
 
