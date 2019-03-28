@@ -1,6 +1,6 @@
 
 ## HOW TO RUN
-The app is developed using the Django web framework. Here's how you can run it;
+The app is developed using python and the Django web framework. Here's how you can run it;
 
 ## method 1 (online app)
 

@@ -1,5 +1,6 @@
 
 # HOW TO RUN
+The script is written in python. Here's how to run it;
 
 
 >run `parser.py` providing an absolute path to a directory with documents to parse. for example;
