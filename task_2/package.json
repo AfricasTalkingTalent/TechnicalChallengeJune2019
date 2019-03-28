@@ -1,0 +1,33 @@
+{
+  "name": "technicalchallengejune2019",
+  "version": "1.0.0",
+  "description": "A simple ussd service",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtotodev05/TechnicalChallengeJune2019.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Kamau Brian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mtotodev05/TechnicalChallengeJune2019/issues"
+  },
+  "homepage": "https://github.com/mtotodev05/TechnicalChallengeJune2019#readme",
+  "dependencies": {
+    "africastalking": "^0.4.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.20",
+    "morgan": "^1.9.1",
+    "ussd-menu-builder": "^1.1.1"
+  }
+}
