@@ -34,3 +34,6 @@ try:
 
 except Exception as e:
     print("Fatal error: "+e)
+
+
+#to run the file do 'python task_1.py -f Path/to/files' in terminal
