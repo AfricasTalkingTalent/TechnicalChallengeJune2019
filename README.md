@@ -1,12 +1,5 @@
 ; These scripts were only tested with python 3.7
 
-; ```africastalking``` package is required. It is only available on PyPI.
-
-```
-#Requires python3-pip installed
->pip install africastalking
-```
-
 # Task 1
 Solved in a fairly straightforward manner with recursion over filenames and binary search on a sorted array of characters
 
@@ -19,6 +12,13 @@ Run traversal.py from any directory you wish to investigate
 ```
 
 # Task 2
+; ```africastalking``` package is required. It is only available on PyPI.
+
+```
+#Requires python3-pip installed
+>pip install africastalking
+```
+
 Solved using flask. The USSD code works fairly simply. Could be made better if sessions behaved the way I expected them to. Needs flask and ngrok to function.
 
 #Usage
