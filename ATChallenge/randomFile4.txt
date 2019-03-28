@@ -1,0 +1,1 @@
+Microcontroller units (MCUs) never stop evolving; a more functional, featured MCU follows every model. Embedded systems have grown with continually growing MCU technology, yet there are many traditional MCUs that are still selling in high volumes
