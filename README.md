@@ -1,109 +1,49 @@
 # Code Challenge for the June 2019 Cohort
 
-Here's the challenge for anyone hoping to join the June to August Technical Internship Cohort at Africa's Talking. 
+This pull request contains the solution to both Task 1 and Task 2. 
 
-## This challenge is due at 0900hrs EAT on 29th March 2019
-
-## Simple Unchanging Rules
-The code challenge is and will always be judged using the following criteria:
-  - A Correct fork, branch and pull request
-  - Using the GitHub Pull Request Time Stamp and correct code quality & structure, we unfortunately won't be able to consider any code challenge that goes over the timeline stated above.
-  - Code quality and structure will be evaluated by the team
-  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the platform.
-  - Complete both challenges below
-
-## Terms and Conditions
-You can participate on as many challenges as you wish:
-  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the platform.
-  - Code Challenges are time bound - the time restriction is specified on the challenge
-  - Additional rules MAY be provided on the code challenge and will vary for each challenge
-  - You are free to use your tools of choice as long as they fall under the rules of the challenge as below
-  - Only successful interviewies will be contacted for the next round of interviews
-
-## Code Challenge Bounty:
-  - A chance to work with some of the most brilliant minds in the world!
-  
 ## Task 1
-##### Those structures though...
-##### Play around with these structures, make sure the logic and the approach are tight.
 
-With the assumption that you are using an object oriented programming language, write a program that given hundreds of documents, can find all documents with words containing the letter "a" in them.
+Task one has been done using a python script found in python/task1.py
 
-## Tips
-###### Map then reduce
-###### Comment your code to show your thought process
-###### You can submit this as a file in your pull request named "task 1"
+To run the file, copy it to any location on your PC, preferrably one with lots of text documents
 
+ - Open terminal and change directory into the directory with the script
+```
+        cd /path/to /your/python/script
+```
+ - run the script using the command 
+```
+        python3 test1.py
+```
+- Thats it! You should see your results
 
+You can edit the values of `self.search_term` and `self.file_type` to select search query and the type of document to be searched respectively. 
+
+##### Have fun!
+#
+#
 ## Task 2
-##### Send and validate
-##### Play around with some of our products.
 
-Create a simple USSD + SMS app that does user registration.
+Task two has been implemented in a single php file for ease of deployment.
 
-User journey: person dials the USSD Code and gets prompted for a username and email address. After which they get an SMS response telling them they've registered successfully
+This script receives a USSD sandbox request and sends a confirmation SMS after confirmation of entry of the specified fields.
 
-## Resources: 
-- AT SDKs: https://github.com/AfricasTalkingLtd
-- Sandbox + Simulator: Which you access when you open your AT account
-- AT docs: http://docs.africastalking.com/
+Africa's talking requires developers to register a callback url for all USSD requests. This can be found in the script between line 27 and 60.
 
-## Tips
-###### Include run and dependency instructions in your README.md file or push a runnable file
-###### Comment your code to show your thought process
-###### Make sure your project is runnable for this task
+The send SMS function is found in the script too. This and other functions are documented in the code.
 
-# Working on the Code Challenge
-1.Fork the code challenge repository provided.
+#
+To run the file, copy it to any location on your PC, preferrably one with lots of text documents
 
-2.Make a topic branch. In your github form, keep the master branch clean. When you create a branch, it essentially will be a copy of the master.
-
->Pull all changes, make sure your repository is up to date
-
-```sh
-$ cd June_2019_Challenge
-$ git pull origin master
-```
-
->Create a new branch as follows-> git checkout -b [your name], e.g.
-
-```sh
-$ git checkout -b roina_ochieng master
-```
-
->See all branches created
-
-```sh
-$ git branch
-* roina_ochieng
-  master
-```
-
->Push the new branch to github
-
-```sh
-$ git push origin -u roina_ochieng
-```
-
-3.Make changes to the fork following the Code Challenge provided.
-
-4.Commit the changes to your fork.
-
-5.Make a pull request to the January_2019_UiUx_Challenge Repo.
-
-## Get Support from Africa's Talking
-In case you have any questions, reach out [the team](mailto:talent@africastalking.com) or the #internship_challenge Slack channel
-
-## Submissions later than 0900hrs EAT on 29th March 2019 will not be considered
-
-
-
-
-
-
-
-
-
-
-
-
+ - Create an account on cloud9.io
+ - Select a php project to run your project.
+ - Copy the contents of this repository there, most importantly,`composer.json` and `composer-lock.json` and `index.php`
+ - Open the bash terminal and type `composer install`
+ - Then `run` the project
+ - Go to africastalking's sandbox and register your callback url to reference `index.php` https://account.africastalking.com/apps/sandbox/ussd/channel/create
+ - Go to https://account.africastalking.com/apps/sandbox/settings/key and get an api key. 
+ - Replace `YOUR_API_KEY` in index .php with your new API key.
+ - Log into your sandbox application and after registering a phone number,dial the ussd code you had specified in the prevoious stel
+ 
+##### Have fun!
