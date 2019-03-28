@@ -1,3 +1,10 @@
+'''
+CODE BY KIMARU THAGANA
+Requred packages:
+pip3 install tika
+pip3 install python-docx
+'''
+
 from docx import Document
 from tika import parser
 import os

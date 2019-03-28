@@ -1,3 +1,8 @@
+'''
+CODE BY KIMARU THAGANA
+pip3 install africastalking
+'''
+
 import africastalking
 
 # Initialize SDK
