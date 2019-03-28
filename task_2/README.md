@@ -72,17 +72,17 @@ There are two main folders;
 2. `ussd_project` - django project-wide settings
 
 ##### **callback/**
-This is the callback url path. It is defined inside ussd_project/urls.py. The path maps to the ussd_callback() function described below.
+This is the callback url path. It is defined inside `ussd_project/urls.py`. The path maps to the `ussd_callback()` function described below.
 
 
 
 The ussd_app/views.py file contains the application logic.
 Inside the file, two functions are defined:
-1. ussd_callback() : the callback url for the ussd application
-2. send_sms() : a function that implements sending sms using the AT SMS service.
+1. `ussd_callback()` : the callback url for the ussd application
+2. `send_sms()` : a function that implements sending sms using the AT SMS service.
 
 
-##### **ussd_callback(request)**
+##### **1. ussd_callback(request)**
 
 ##### short description
 This is the callback url defined inside ussd_app/views.py. It's mapped to the uri: 'callback/'
@@ -117,8 +117,8 @@ The `text` parameter from the POST data is set to a text variable inside the fun
 text = request.POST.get("text", "default")
 ```
 
-***Registration**
-The registration process relies upon checking for the astericks in the `text` variable value. To ensure there are no false positives, the user is prohibited from using the asterick '*' when providing data. 
+**Registration**
+*The registration process relies upon checking for the astericks in the `text` variable value. To ensure there are no false positives, the user is prohibited from using the asterick '\*' when providing data.* 
 
 Registration process is implemented as follows:
 1. check first if it's the first session. An indicator for this is an empty string. If indeed it is the first session, the user is expected to `reply with '1'` to proceed with registration.
@@ -131,12 +131,12 @@ Registration process is implemented as follows:
 
 
 
-##### **send_sms(phone_number)**
+##### **2. send_sms(phone_number)**
 
-#####short description
+##### short description
 Sends user an sms confirming that their registration was successful
 
-#####verbose description
+##### verbose description
 The function simply;
 
 1. Initializes the AT sdk using the sandbox environment.
