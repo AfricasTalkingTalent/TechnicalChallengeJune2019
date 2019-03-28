@@ -96,6 +96,43 @@ In case you have any questions, reach out [the team](mailto:talent@africastalkin
 
 ## Submissions later than 0900hrs EAT on 29th March 2019 will not be considered
 
+# Solution
+
+## Task 1: Find documents containing the character "a"
+In this challenge I am making the following assumptions:
+* The program will be offline and all the doucments to be searched are in a single directory.
+* The documents are plain text files. Binary documents (e.g with extension .docx) will be ignored.
+* No processing is required a part from find documents with words containing the letter "a".
+
+The approach I used was from the thinking that if the files can be read one at a time then there would be no need to create data structures that would unnecessarily use more memory by opening all the files at once and iterating through each.
+
+The program requires the library [BinaryOrNont](https://binaryornot.readthedocs.io/en/latest/) installed.
+To run execute:
+```bash
+python3 check_documents.py <doucuments path>
+```
+If the documents are in the same directory as the program file:
+```bash
+python3 check_documents.py
+```
+
+At the end the program will just list the files found containing the letter "a".
+
+## Task 2: USSD + SMS APP
+In this challenge I am assuming that the USSD does not have to be live. I used sandbox for USSD but SMS is live. Therefore, use your actual phone number on the emulator so you can receive the confirmation SMS on your phone.
+
+The USSD code is `*384*8959#`.
+The live callback URL is: `http://projects.shemkiptoo.com/at/api/ussdsession`.
+On the source code the actual logic can be found in the file `task2/app/Http/Controllers/USSDController.php`.
+
+I used laravel framework for the challenge. To run the application:
+1. Clone the project.
+2. cd into the project root directory.
+3. Rename `.env.example` file to `.env` inside your project root and fill the database information. 
+4. Run `composer install`
+5. Navigate to config/AfricastalkingGateway.php and fill in your username and api_key
+6. Run `php artisan migrate`
+
 
 
 
