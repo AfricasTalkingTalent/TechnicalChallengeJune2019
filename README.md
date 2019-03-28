@@ -13,13 +13,13 @@ Solved using flask. The USSD code works fairly simply. Could be made better if s
 
 #Usage
 
-#For conda users:
+# For conda users:
 
 ```
 >conda install flask
 ```
 
-#For pip users:
+# For pip users:
 ```
 >pip install flask
 ```
