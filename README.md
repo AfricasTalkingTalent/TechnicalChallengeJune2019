@@ -7,11 +7,11 @@ A simple USSD + SMS app that does user registration. Makes use Africa's talking 
 The following should be installed before running the code:
   -python 3.6+
   -Flask mini web framework
-     ```sh
+     ```
     pip install Flask
     ```
   -flask_ngrok
-      ```sh
+      ```
     pip install flask-ngrok
     ```
   -africastalking API
