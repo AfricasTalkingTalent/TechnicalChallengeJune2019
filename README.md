@@ -26,9 +26,9 @@ Solved using flask. The USSD code works fairly simply. Could be made better if s
 ```
 
 #Simply run ussd.py and attach ngrok to the listening port
-```
- #Default port for flask is localhost:5000
+``` 
 >python ussd.py
+ #Default port for flask is localhost:5000
  #Could be run from wherever ngrok is
 >./ngrok http 5000
  
