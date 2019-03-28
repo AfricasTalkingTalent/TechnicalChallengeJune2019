@@ -10,10 +10,16 @@ class FileDigest(object):
         self.filesList=filesList
 
 
-# evaluate if document is pdf or simple text file
-    def checkExtension(self):
-        pass
+# evaluate if document is pdf or simple text file. Currently the only supported files
+    def checkExtension(self,document):
+
+        if document.lower().endswith('.pdf'):
+            return 1
+        elif document.lower().endswith('.txt'):
+            return 2
+        else:
+            return False
 
 # use regex to find out if any word contains an a.
-    def checkFor_a(self):
-        pass
+    def checkFor_a(self,documentpath):
+
