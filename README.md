@@ -1,109 +1,91 @@
-# Code Challenge for the June 2019 Cohort
+# TechnicalChallengeJune2019
 
-Here's the challenge for anyone hoping to join the June to August Technical Internship Cohort at Africa's Talking. 
+A Simple USSD + SMS App that does user registration using AfricasTalking SDK.
 
-## This challenge is due at 0900hrs EAT on 29th March 2019
+## Getting Started
 
-## Simple Unchanging Rules
-The code challenge is and will always be judged using the following criteria:
-  - A Correct fork, branch and pull request
-  - Using the GitHub Pull Request Time Stamp and correct code quality & structure, we unfortunately won't be able to consider any code challenge that goes over the timeline stated above.
-  - Code quality and structure will be evaluated by the team
-  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the platform.
-  - Complete both challenges below
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## Terms and Conditions
-You can participate on as many challenges as you wish:
-  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the platform.
-  - Code Challenges are time bound - the time restriction is specified on the challenge
-  - Additional rules MAY be provided on the code challenge and will vary for each challenge
-  - You are free to use your tools of choice as long as they fall under the rules of the challenge as below
-  - Only successful interviewies will be contacted for the next round of interviews
+### Prerequisites
 
-## Code Challenge Bounty:
-  - A chance to work with some of the most brilliant minds in the world!
-  
-## Task 1
-##### Those structures though...
-##### Play around with these structures, make sure the logic and the approach are tight.
-
-With the assumption that you are using an object oriented programming language, write a program that given hundreds of documents, can find all documents with words containing the letter "a" in them.
-
-## Tips
-###### Map then reduce
-###### Comment your code to show your thought process
-###### You can submit this as a file in your pull request named "task 1"
+ * Git
+ * Python 3.6.5
+ * Virtualenv
+ * ngrok live server
 
 
-## Task 2
-##### Send and validate
-##### Play around with some of our products.
+### Quick Start
 
-Create a simple USSD + SMS app that does user registration.
+A step by step series of examples that tell you how to get a development venv running
 
-User journey: person dials the USSD Code and gets prompted for a username and email address. After which they get an SMS response telling them they've registered successfully
+1. Git clone the repository
 
-## Resources: 
-- AT SDKs: https://github.com/AfricasTalkingLtd
-- Sandbox + Simulator: Which you access when you open your AT account
-- AT docs: http://docs.africastalking.com/
-
-## Tips
-###### Include run and dependency instructions in your README.md file or push a runnable file
-###### Comment your code to show your thought process
-###### Make sure your project is runnable for this task
-
-# Working on the Code Challenge
-1.Fork the code challenge repository provided.
-
-2.Make a topic branch. In your github form, keep the master branch clean. When you create a branch, it essentially will be a copy of the master.
-
->Pull all changes, make sure your repository is up to date
-
-```sh
-$ cd June_2019_Challenge
-$ git pull origin master
+```
+$ git clone https://github.com/Harrison-Gitau/TechnicalChallengeJune2019.git
 ```
 
->Create a new branch as follows-> git checkout -b [your name], e.g.
+2. Change directory to TechnicalChallengeJune2019
 
-```sh
-$ git checkout -b roina_ochieng master
+```
+$ cd TechnicalChallengeJune2019
 ```
 
->See all branches created
+3. Initialize and activate a Virtualenv
 
-```sh
-$ git branch
-* roina_ochieng
-  master
+```
+$ virtualenv venv
+$ source venv/bin/activate
 ```
 
->Push the new branch to github
+4. Open the folder with your favourite text editor. For example: Sublime, Visual Code or Atom
 
-```sh
-$ git push origin -u roina_ochieng
+```
+$ subl .
+$ code .
+$ atom .
 ```
 
-3.Make changes to the fork following the Code Challenge provided.
+5. Install Project Dependencies
 
-4.Commit the changes to your fork.
+```
+$ pip3 install -r requirements.txt
+```
 
-5.Make a pull request to the January_2019_UiUx_Challenge Repo.
+6. Start your ngrok live server
+   Head over to where you have installed ngrok.
 
-## Get Support from Africa's Talking
-In case you have any questions, reach out [the team](mailto:talent@africastalking.com) or the #internship_challenge Slack channel
+```
+$ ./ngrok http 5000
+```
 
-## Submissions later than 0900hrs EAT on 29th March 2019 will not be considered
+7. Access ussd.py and sms.py files and run in your terminal
+
+```
+$ python3 ussd.py
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+To test the USSD, The moment your ngrok live server runs, copy the first likn and paste
+it as your callback url. Ensure that your local development server is running too. Head over
+to the Simulator and try it out.
+
+## Built With
+
+* Flask
 
 
+## Authors
+
+* **Harrison Gitau** - *Initial work* - [Harrison-Gitau](https://github.com/Harrison-Gitau)
 
 
+## License
 
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
+## Acknowledgments
 
-
-
-
-
-
+* Hat tip to documentation at https://build.at-labs.io/discover
+* Inspiration
