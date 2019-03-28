@@ -52,6 +52,8 @@ User journey: person dials the USSD Code and gets prompted for a username and em
 ###### Include run and dependency instructions in your README.md file or push a runnable file
 ###### Comment your code to show your thought process
 ###### Make sure your project is runnable for this task
+#### Notes:
+###### The task 2 app runs on ngrok to push the callback site online
 
 # Working on the Code Challenge
 1.Fork the code challenge repository provided.
