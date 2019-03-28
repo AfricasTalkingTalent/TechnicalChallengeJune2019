@@ -2,6 +2,7 @@
 Solved in a fairly straightforward manner with recursion over filenames and binary search on a sorted array of characters
 
 #Usage
+
 Run traversal.py from any directory you wish to investigate
 
 ```
