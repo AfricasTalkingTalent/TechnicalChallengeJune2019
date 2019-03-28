@@ -1,7 +1,8 @@
 ## Task 2: USSD + SMS APP
 In this challenge I am assuming that the USSD does not have to be live. I used sandbox for USSD but SMS is live. Therefore, use your actual phone number on the emulator so you can receive the confirmation SMS on your phone.
 
-The live callback URL is: `http://projects.shemkiptoo.com/at/api/ussdsession`
+The USSD code is `*384*8959#`.
+The live callback URL is: `http://projects.shemkiptoo.com/at/api/ussdsession`.
 On the source code the actual logic can be found in the file `task2/app/Http/Controllers/USSDController.php`.
 
 I used laravel framework for the challenge. To run the application:
