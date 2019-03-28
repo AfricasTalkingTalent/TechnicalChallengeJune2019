@@ -1,7 +1,7 @@
 
 /******************************************************************************
  *  Compilation:  javac Searcher.java Main.java
- *  Execution:    java Main a File [...]
+ *  Execution:    java Main a FileName [...]
  *
  *  Reads in string a, a number of files and
  *  searches for the pattern in the input files
