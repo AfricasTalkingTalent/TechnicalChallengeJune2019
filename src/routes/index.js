@@ -1,20 +1,16 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const router = express.Router();
 
 const account = require('../accounts');
 
-const routes = app => {
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
 
-  const router = express.Router();
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  // res.render('index', res.locals.commonData);
+  console.log("router js works")
+});
 
-  app.post('/', (req, res) => {
-    account(req).run(req.body, ussdResult => {
-      res.send(ussdResult);
-    });
-  });
-  return router;
-};
-
-return routes;
+module.exports = router;
