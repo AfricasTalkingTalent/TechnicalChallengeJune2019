@@ -1,0 +1,15 @@
+{
+  "name": "task_1",
+  "version": "1.0.0",
+  "description": "Look for characters",
+  "main": "extractor-impl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node extractor-impl.js"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "Kamau Brian",
+  "license": "MIT"
+}
