@@ -1,3 +1,5 @@
+# Simple app demonstrating use of USSD and SMS using the Africa's Talking gateway
+
 from flask import Flask, request, Response
 import africastalking
 
@@ -20,27 +22,34 @@ def main():
         phone_number = request.form.get('phoneNumber')
         text = request.form.get('text')
 
-    response = ""
+    response = ""       # variable for storing respose temporarily
 
-    if text == "":
+    if text == "":      # the session has just been initialised
         response = "CON Enter a username and password separated by a colon (:)"
         
-    if text != "":
-        if ":" in text:
+    if text != "":      # the user has responded
+        if ":" in text:         #check if the text has the specified format
             parts = text.split(':')
             username = parts[0].strip()
             email = parts[1].strip()
-            users[username] = email
 
-            if not username == "" and not email == "" and "@" in email:
-                response = "END A confirmation will be sent via text."
+            if not username == "" and not email == "" and "@" in email: #additional validation for the username and password
+                usernames = users.keys()
+                if username not in usernames:   # check if username is unique
+                    response = "END A confirmation will be sent via text."
+                    
+                    # register user
+                    users[username] = email
+                    
+                    # send confirmation message
+                    number = []     #the send function requires a list
+                    number.append(phone_number)
+                    confirmationText = "You have been successfully registered!"
+                    shortCode = "1635"
+                    sms.send(confirmationText, number, shortCode, enqueue = False)
+                elif username in usernames:
+                    response = "END The username has already been taken."
 
-                # send confirmation message
-                number = []
-                number.append(phone_number)
-                confirmationText = "You have been successfully registered!"
-                shortCode = "1635"
-                sms.send(confirmationText, number, shortCode, enqueue = False)
             else:
                 response = "END Invalid username or email"
         else:
