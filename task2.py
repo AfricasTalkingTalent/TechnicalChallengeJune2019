@@ -12,7 +12,7 @@ africastalking.initialize(username, apikey)
 #Get the SMS service
 sms = africastalking.SMS
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 response = ""
 
