@@ -1,4 +1,5 @@
 <?php
+// Import Africastalking SDK
 require 'vendor/autoload.php';
 use AfricasTalking\SDK\AfricasTalking;
 
@@ -26,7 +27,7 @@ function sendsms(){ // Thats it, hit send and we'll take care of the rest
 // USSD START
 // ---------------------------------------------
 
-// Reads the variables sent via POST from our gateway
+// Reads the variables sent via POST from our USSD gateway
 $sessionId   = $_POST["sessionId"];
 $serviceCode = $_POST["serviceCode"]; // Code dialed
 $phoneNumber = $_POST["phoneNumber"]; // Recipient
@@ -55,7 +56,6 @@ if ($text == "") {
 // Echo the response back to the API
 header('Content-type: text/plain');
 echo $response;
-
 // ---------------------------------------------
 //USSD END
 // ---------------------------------------------
