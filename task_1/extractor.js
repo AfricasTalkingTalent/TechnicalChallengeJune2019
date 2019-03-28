@@ -28,10 +28,12 @@ module.exports = class Extractor {
                     if(data.includes(`${searchString}`)){ // Search for String
                         console.log(`The Letter ${searchString} has been found in ${renamedDirectory}`)
 
+
                         //Show on which directory that letter has been found
 
                     }else if(!data.includes(`${searchString}`)){
                         console.log(`The letter ${searchString} has not been found in ${renamedDirectory}`)
+
 
                         //Show on which directory letter has not been found
                     }
