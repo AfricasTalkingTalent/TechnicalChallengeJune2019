@@ -21,7 +21,7 @@ The following should be installed before running the code:
 -Assign your Africastalking API key as a string to the variable api_key
 
 -Once you run the code, ngrok will start
-![ngrokStart](ngrokInPycharm.jpg)
+![ngrokStart](TechnicalChallengeJune2019/ngrokInPycharm.JPG)
  
 -Copy the second URL and use it as your callback URL on your Africa’s talking USSD channel
  
