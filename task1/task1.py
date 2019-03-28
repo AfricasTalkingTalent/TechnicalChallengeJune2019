@@ -1,4 +1,4 @@
-from glob import glob
+from docx import Document
 from tika import parser
 import os
 class FileDigest(object):
@@ -8,15 +8,15 @@ class FileDigest(object):
         :param filesList: list of paths to all the files to be evaluated
         '''
         self.filesList=filesList
-        print(filesList)
 
 
-# evaluate if document is pdf or simple text file. Currently the only supported files
+# evaluate if document is pdf, docx or simple text file. Currently the only supported files
+    # These are the most common document file formarts
     def checkExtension(self,document):
 
         if document.lower().endswith('.pdf'):
             return 1
-        elif document.lower().endswith('.txt'):
+        elif document.lower().endswith('.txt') or document.lower().endswith('.docx'):
             return 2
         else:
             return False
@@ -28,27 +28,35 @@ class FileDigest(object):
         for singledocument in self.filesList: # iterate through every file
             singledocument='sampleDocs/'+singledocument
             if self.checkExtension(singledocument)==1: # it is a pdf
-                pdf=parser.from_file(singledocument)
-                if "a" in pdf['content']:
-                    filesWith_a.append(singledocument)
-            elif self.checkExtension(singledocument)==2: # it is a txt
-                file=open(singledocument,"r").read()
-                if "a" in file:
-                    filesWith_a.append(singledocument)
-                    break
-                else:
-                   continue
+                pdf=parser.from_file(singledocument) #read pdf into variable
+                if "a" in pdf['content']: # inspect presence of a in document
+                    filesWith_a.append(singledocument) # append to list
 
-        return filesWith_a
+            elif self.checkExtension(singledocument)==2: # it is a txt or docx
+                if singledocument.lower().endswith('.docx'):
+                    doc = Document(singledocument)
+                    allText = ''
+                    for doctext in doc.paragraphs:
+                        allText.join(str(doctext.text))
+                        if "a" in allText:
+                            filesWith_a.append(singledocument)  # append to list
+                else:
+                    file=open(singledocument,"r").read()
+                    if "a" in file: # check presence of a
+                        filesWith_a.append(singledocument) # append to list
+
+
+        return filesWith_a # return a list of files with words containing a
 
 
 # MAIN RUNNING OF PROGRAM
 
 docDigestObj=FileDigest(os.listdir('sampleDocs'))
+# instantiate object and pass list of files to examine
 
 print("FILES CONTAINING WORDS WITH A")
-for i in docDigestObj.checkFor_a():
-    print(str(i)+"\n")
+for i in docDigestObj.checkFor_a(): # loop through returned list
+    print(str(i))
 
 
 
