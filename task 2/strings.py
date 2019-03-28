@@ -1,3 +1,8 @@
+"""
+Stored some strings here for organization
+"""
+
+
 name_request_both = "CON Hi, please enter your name and email address, separated by a space\n"
 name_request = "CON Hi there, please enter your name (alphabets only)...\n" 
 incorrect_name_request = "CON You seemed to have entered a wrong name. Try Again\n"

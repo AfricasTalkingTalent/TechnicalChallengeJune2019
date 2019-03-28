@@ -32,6 +32,7 @@ def ussd_callback():
             session['name_pending'] = True
     """
     
+    #Obtaining values from the requests from AT
     phone_number = request.values.get("phoneNumber", None)
     text = request.values.get("text", "default")
 
@@ -69,6 +70,7 @@ def ussd_callback():
     else:
         response = strings.session_end
     
+    #Invoke SMS after submission
     sms.send_sms(text, phone_number)
 
     return response
