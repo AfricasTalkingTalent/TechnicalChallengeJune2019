@@ -1,6 +1,6 @@
 **Setup Instructions**
 
-## Task One.
+## Task Two.
 
 ```
 
@@ -15,5 +15,10 @@
 
 4. Use tunneling , e.g with ngrok to register endpoint /api/v1/ussd-callback to africa's talking sandbox
 
-``
+
+```
+
+**Testing of the url can also be done through  https://node-afs-api.herokuapp.com/api/v1/ussd-callback**
+
+**Using the following ShortCode on Sandbox \*384\*4587#**
 
