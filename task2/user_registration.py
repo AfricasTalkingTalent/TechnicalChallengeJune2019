@@ -15,6 +15,8 @@ preferred_username=""
 preferred_email=""
 
 thisYear=datetime.today().year # current year to be used to distinguish username
+# also used in mitigation of user errors
+# endswith() used to work around the nature of the text returned from the AT simulator
 @app.route('/',methods=['POST', 'GET'])
 def ussd_callback():
   response=""
