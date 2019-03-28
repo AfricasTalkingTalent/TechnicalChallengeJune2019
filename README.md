@@ -24,9 +24,9 @@ The following should be installed before running the code:
 ![ngrokStart](ngrokInPycharm.JPG)
  
 -Copy the second URL and use it as your callback URL on your Africa’s talking USSD channel
- 
+ ![ngrokURL](SandboxNgrokURL.JPG)
 -You can track the requests coming in from your app on the traffic stats URL provided by ngrok
- 
+ ![ngrokRequests](ngrokRequest.JPG)
 -Africa’s Talking Sandbox + Simulator have been used for testing
 
 
