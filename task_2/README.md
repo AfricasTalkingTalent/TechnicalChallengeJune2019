@@ -9,7 +9,7 @@ The callback url is: https://at-ussdapp.herokuapp.com/callback/
 
 `The registered ussd code is: *384*6854#`
 
-Open the Africa's Talking phone simulator and call the ussd code *384*6854#
+Open the Africa's Talking phone simulator and call the ussd code \*384\*6854\#
 
 
 
@@ -63,6 +63,8 @@ $ ngrok http 8000
 
 Now, a callback url can be accessed at `'host'/callback/`. 
 Note: host value is the one ngrok will assign you.
+
+`You can now proceed to open the Africa's Talking phone simulator and call the ussd code *384*6854#`
 
 
 # App Documentation
