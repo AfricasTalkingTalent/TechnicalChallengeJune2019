@@ -19,6 +19,7 @@ The following should be installed before running the code:
 ## RUNNING
 -Open the code in a code editor of your choosing
 -Assign your Africastalking API key as a string to the variable api_key
+
 -Once you run the code, ngrok will start
  
 -Copy the second URL and use it as your callback URL on your Africa’s talking USSD channel
