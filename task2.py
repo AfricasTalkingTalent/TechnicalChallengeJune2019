@@ -17,16 +17,6 @@ app = Flask(__name__)
 response = ""
 
 
-def sendconfirmation(recipients, message, sender):
-    #Send the SMS
-    try:
-        #Once this is done, that's it! We'll handle the rest
-        response = sms.send(message, recipients, sender)
-        print(response)
-    except Exception as e:
-        print(f"message wasn't sent because {e}")
-
-
 
 @app.route('/', methods=['POST', 'GET'])
 def ussd_callback():
@@ -48,6 +38,15 @@ def ussd_callback():
         response = "CON Enter your email address\n"
     else:
         response  = "END You will receive an sms confirmation shortly\n"
-        sendconfirmation([phone_number],"You have successfully registered",service_code)
+        #send confirmation to user
+        try:
+            #Once this is done, that's it! We'll handle the rest
+            response = sms.send("You have successfully registered", [phone_number])
+            print(response)
+        except Exception as e:
+            print(f"message wasn't sent because {e}")
 
   return response
+
+if __name__ == '__main__':
+   app.run()
