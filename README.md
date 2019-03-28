@@ -1,5 +1,5 @@
 # Task 1
-Solved fairly easily with recursion over filenames and binary search on a sorted array of characters
+Solved in a fairly straightforward manner with recursion over filenames and binary search on a sorted array of characters
 
 #Usage
 Run traversal.py from any directory you wish to investigate
@@ -12,6 +12,7 @@ Run traversal.py from any directory you wish to investigate
 Solved using flask. The USSD code works fairly simply. Could be made better if sessions behaved the way I expected them to. Needs flask and ngrok to function.
 
 #Usage
+
 #For conda users:
 
 ```
@@ -26,7 +27,7 @@ Solved using flask. The USSD code works fairly simply. Could be made better if s
 #Simply run ussd.py and attach ngrok to the listening port
 ```
 >python ussd.py
-#Default port for ngrok is localhost:5000
+#Default port for flask is localhost:5000
 >./ngrok http 5000
 #Could be run from wherever ngrok is
 ```
