@@ -5,18 +5,21 @@ import africastalking
 
 # Initialize SDK
 username = "sandbox"    # for sandbox testing enviromnent
-api_key = "f29a3c192d68ab1ab466793e7907ab4d88bb58a4363c66578cb768b94a1b1599"      # current sandbox API key
+api_key = "f29a3c192d68ab1ab466793e7907ab4d88bb58a4363c66578cb768b94a1b1599"      # current sandbox API key. You need to use your own
 africastalking.initialize(username, api_key)
 
 sms = africastalking.SMS #initialise sms service
 
 users = {}      #dictionary to store users: {username: email}
 
+# initialise app
 app = Flask(__name__) 
   
-@app.route('/', methods = ['POST']) 
-def main(): 
-    if request.method == 'POST':
+
+@app.route('/', methods = ['POST'])     # set the function to receive only POST requests
+def main():    
+    if request.method == 'POST':    
+        # receive data from POST request
         session_id = request.form.get('sessionId')
         service_code = request.form.get('serviceCode')
         phone_number = request.form.get('phoneNumber')
