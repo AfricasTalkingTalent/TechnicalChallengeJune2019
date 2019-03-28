@@ -4,14 +4,14 @@ import os
 import africastalking
 
 
-def send_sms(name, phone_number, email):
-    africastalking.initialize(os.getenv('USERNAME', 'sandbox'), os.getenv('API_KEY', 'f29a3c192d68ab1ab466793e7907ab4d88bb58a4363c66578cb768b94a1b1599'))
+def send_sms(text, phone_number):
+    #Get variables or set them if the don't exist
+    africastalking.initialize(os.getenv('USERNAME', 'sandbox'), os.getenv('API_KEY', '1b16cfa42f1c13533f47e912b7419ea5308b27b1905521dbbe66117df4992ddb'))
     sms = africastalking.SMS
     text = "Hi"
-    text += name.split(' ')[0]
     text += "\nYou have been successfully registered with the email "
-    text += "some_email.com"
 
+    #Callback function for asynchronous sending
     def sms_finish(error, data):
         if error is not None:
             raise error
