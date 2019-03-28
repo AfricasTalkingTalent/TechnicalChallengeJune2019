@@ -17,6 +17,7 @@ def ussd_callback(request):
 	
 	#check if it's the start of a SESSION.
 	if text == "":
+
 		response = """CON Hello! You are about to register for our service.
 		You will be required to provide a username and email. reply with 1 to continue.
 
@@ -28,18 +29,18 @@ def ussd_callback(request):
 		#ask for user name
 		response = "CON Please provide your username: "
 
-	#user has provided username
+	#if user has provided username
 	#ask for user email
 	elif text.count('*') == 1 and not text.endswith('*'):
 		response = "CON Please provide your email: "
 
 
-	#check if it's the last prompt(more than two astericks in text) 
+	#check if it's the last prompt(indicator is having two astericks in text) 
 	elif text.count('*') == 2 and not text.endswith('*'):
 
 		#last prompt means we have a username and email - in the format '1*username*email'
-		# first we store user details 
-		#split user input along a '*' to separate username from password
+		# first we store user details after
+		#splitting user input along a '*' to separate username from password
 		# expected format after split: ['1', 'username', 'password']	
 		user_details = text.split('*')
 		user_name = user_details[1]
