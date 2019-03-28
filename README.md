@@ -1,3 +1,11 @@
+; These scripts were only tested with python 3.7
+; ```africastalking``` package is required. It is only available on PyPI.
+
+```
+ #Requires python3-pip installed
+>pip install africastalking
+```
+
 # Task 1
 Solved in a fairly straightforward manner with recursion over filenames and binary search on a sorted array of characters
 
@@ -14,15 +22,15 @@ Solved using flask. The USSD code works fairly simply. Could be made better if s
 
 #Usage
 
+# For pip users:
+```
+>pip install flask
+```
+
 # For conda users:
 
 ```
 >conda install flask
-```
-
-# For pip users:
-```
->pip install flask
 ```
 
 #Simply run ussd.py and attach ngrok to the listening port
