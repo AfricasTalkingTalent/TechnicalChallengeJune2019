@@ -27,13 +27,15 @@ Solved using flask. The USSD code works fairly simply. Could be made better if s
 
 #Simply run ussd.py and attach ngrok to the listening port
 ```
+ #Default port for flask is localhost:5000
 >python ussd.py
-#Default port for flask is localhost:5000
+ #Could be run from wherever ngrok is
 >./ngrok http 5000
-#Could be run from wherever ngrok is
+ 
 ```
 #Current callback_url:
 ```
 http://2426c52b.ngrok.io
 as at 28.03.2019 21:22:00
+USSD Channel: *384*741852# (Sandbox)
 ```
