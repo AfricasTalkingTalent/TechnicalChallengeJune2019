@@ -8,6 +8,9 @@ africastalking.initialize(username, api_key)
 # Initialize service e.g. SMS
 sms = africastalking.SMS
 
-# ussd service
-# communicate to user
-response = sms.send("Successful account registration", ["+254726782953"])
+def successmessage(username, email):
+    username=username.split('*')[-1]
+    email=email.split('*')[-1]
+    # communicate to user
+    response = sms.send("Successful account registration\n Your are receiving this message because you have signed up for an account at \n"+
+    "JUNETALK Below are your details \n username:"+str(username)+"\n Email:"+str(email)+"\n Visit https://www.juntalk2019.com for more information", ["+254726782953"])
