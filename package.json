@@ -1,0 +1,39 @@
+{
+  "name": "ussd-registration",
+  "version": "1.0.0",
+  "description": "A user registration application using ussd",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./source/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omamonaphtali/TechnicalChallengeJune2019.git"
+  },
+  "keywords": [
+    "ussd",
+    "user-registration"
+  ],
+  "author": "Jared Omamo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omamonaphtali/TechnicalChallengeJune2019/issues"
+  },
+  "homepage": "https://github.com/omamonaphtali/TechnicalChallengeJune2019#readme",
+  "dependencies": {
+    "africastalking": "^0.4.0",
+    "body-parser": "^1.18.3",
+    "express": "~4.16.4",
+    "express-handlebars": "*",
+    "express-session": "^1.15.6",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "jsonfile": "^5.0.0",
+    "lodash": "^4.17.11",
+    "morgan": "~1.9.0",
+    "nodemon": "~1.18.10",
+    "ussd-menu-builder": "^1.1.1"
+  }
+}
