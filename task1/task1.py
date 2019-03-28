@@ -57,7 +57,7 @@ class FileDigest(object):
 
 
 # MAIN RUNNING OF PROGRAM
-
+# assumption is all the documents in question will be in a common folder, sampleDocs
 docDigestObj=FileDigest(os.listdir('sampleDocs'))
 # instantiate object and pass list of files to examine
 
