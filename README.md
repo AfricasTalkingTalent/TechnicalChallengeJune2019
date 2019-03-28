@@ -1,8 +1,9 @@
 ; These scripts were only tested with python 3.7
+
 ; ```africastalking``` package is required. It is only available on PyPI.
 
 ```
- #Requires python3-pip installed
+#Requires python3-pip installed
 >pip install africastalking
 ```
 
