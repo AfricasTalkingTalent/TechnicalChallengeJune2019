@@ -1,43 +1,38 @@
-
-# A very simple Flask Hello World app for you to get started with...
-
 from flask import Flask,request
+from datetime import datetime
+from mysite.task2 import *
 
 app = Flask(__name__)
-response=""
 preferred_username=""
 preferred_email=""
+thisYear=datetime.today().year
 @app.route('/',methods=['POST', 'GET'])
 def ussd_callback():
   response=""
-  session_id = request.values.get("sessionId", None)
-  service_code = request.values.get("serviceCode", None)
-  phone_number = request.values.get("phoneNumber", None)
+  global preferred_username
+  global preferred_email
   text = request.values.get("text", "default")
-  print('==='+str(text))
-  if text == '':
+  if text == '' or text.lower().startswith(str('1*')) and text.lower().endswith(str('*3')):
       response = "CON Welcome to the JuneTalk Platform. Select an action you would like to perform \n"
       response += "1. Sign Up  \n"
       response += "2. Quit"
-  elif text == '1':
-      response = "CON Kindly submit your preferred username\n"
-  elif text != '' and text != '1' and text != '2':
+  elif text == '1' or text.lower().startswith('1*') and text.lower().endswith('*1'):
+      response = "CON Kindly submit your preferred username\nEnsure it ends with"+str(thisYear)
+  elif text != '' and text != '1' and text != '2' and text.lower().endswith(str(thisYear)):
        preferred_username=text
        response = "CON Kindly submit your preferred email address\n"
-  elif text != '' and text != '1' and  text != '2' and '@' in text or text == '3':
+  elif text != '' and text != '1' and  text != '2' and '@' in text:
        preferred_email=text
        response = "END Thank you for registering. You will receive a confirmation SMS shortly\n"
-  elif text  != '' and text != '1' and text != '2' and '@' not in text:
-        response = "CON Wrong email format. Kindly include an @ symbol in the email \n"
+       successmessage(preferred_username, preferred_email)
+  elif text  != '' and text != '1' and text != '2' and '@' not in text and not (text.lower().endswith(str(thisYear))) and not (text.lower().endswith(str('*2'))):
+        response = "CON Wrong email or username format. \n"
         response += "3. Try again  \n"
-        response += "4. Quit"
 
-  elif text == '2' or '4':
+  elif text == '2' or text.lower().startswith(str('1*')) and text.lower().endswith(str('*2')):
       response = "END Thank you for your time. "
   else:
        response = "CON Invalid Response. Kindly try again with the options below \n"
        response += "1. Sign Up  \n"
        response += "2. Quit"
-
-  print('======+++++++++++++++=',response)
   return response
