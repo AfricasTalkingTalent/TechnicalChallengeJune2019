@@ -5,8 +5,12 @@ import africastalking
 
 
 def send_sms(text, phone_number):
+    """
+    :This function sends the SMS using AT API
+    :params - text, phone number
+    """
     #Get variables or set them if the don't exist
-    africastalking.initialize(os.getenv('USERNAME', 'sandbox'), os.getenv('API_KEY', '1b16cfa42f1c13533f47e912b7419ea5308b27b1905521dbbe66117df4992ddb'))
+    africastalking.initialize(os.getenv('USERNAME', 'sandbox'), os.getenv('API_KEY', 'fake'))
     sms = africastalking.SMS
     text = "Hi"
     text += "\nYou have been successfully registered with the email "
