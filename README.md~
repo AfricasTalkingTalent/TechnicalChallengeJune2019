@@ -34,15 +34,6 @@ With the assumption that you are using an object oriented programming language, 
 ###### Comment your code to show your thought process
 ###### You can submit this as a file in your pull request named "task 1"
 
-How to Run Submission
-findDocs.py: 
-In the file, define
-findDocs(documents, target)
-Input: - documents: list of documents
-       - target: letter to search for 
-- run python findDocs.py
-
-
 
 ## Task 2
 ##### Send and validate
@@ -61,9 +52,6 @@ User journey: person dials the USSD Code and gets prompted for a username and em
 ###### Include run and dependency instructions in your README.md file or push a runnable file
 ###### Comment your code to show your thought process
 ###### Make sure your project is runnable for this task
-
-How To Run Submission
-ApiCall.py: python ApiCall.py 
 
 # Working on the Code Challenge
 1.Fork the code challenge repository provided.
@@ -110,7 +98,7 @@ In case you have any questions, reach out [the team](mailto:talent@africastalkin
 
 
 
-## Runnin
+
 
 
 
