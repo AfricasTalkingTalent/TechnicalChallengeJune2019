@@ -9,7 +9,7 @@ The code challenge is and will always be judged using the following criteria:
   - A Correct fork, branch and pull request
   - Using the GitHub Pull Request Time Stamp and correct code quality & structure, we unfortunately won't be able to consider any code challenge that goes over the timeline stated above.
   - Code quality and structure will be evaluated by the team
-  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the platform.
+  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the pl git pull origin masteratform.
   - Complete both challenges below
 
 ## Terms and Conditions
@@ -29,13 +29,17 @@ You can participate on as many challenges as you wish:
 
 With the assumption that you are using an object oriented programming language, write a program that given hundreds of documents, can find all documents with words containing the letter "a" in them.
 
-## Tips
-###### Map then reduce
-###### Comment your code to show your thought process
-###### You can submit this as a file in your pull request named "task 1"
-
 
 ## Task 2
+### Dependencies:
+  - Composer for PHP:
+    1. Download link: https://getcomposer.org/
+  - ngrok for tunneling localhost to http;
+    1. Download link: https://ngrok.com/
+    2. To run: 
+      ```sh
+      $ ngrok http "port_number"
+      ```
 ##### Send and validate
 ##### Play around with some of our products.
 
