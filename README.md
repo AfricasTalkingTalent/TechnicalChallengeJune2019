@@ -27,6 +27,11 @@ You can participate on as many challenges as you wish:
 ##### Those structures though...
 ##### Play around with these structures, make sure the logic and the approach are tight.
 
+Run Submission as follows
+-python AT.PY
+-Python AT2.py
+
+
 With the assumption that you are using an object oriented programming language, write a program that given hundreds of documents, can find all documents with words containing the letter "a" in them.
 
 ## Tips
