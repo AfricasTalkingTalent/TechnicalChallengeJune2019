@@ -96,6 +96,27 @@ In case you have any questions, reach out [the team](mailto:talent@africastalkin
 
 ## Submissions later than 0900hrs EAT on 29th March 2019 will not be considered
 
+# How to run task:
+
+## Make sure you have lamp or wamp installed locally
+
+1.Clone or download the project
+
+```sh
+$ git clone https://github.com/EverlynAsiko/TechnicalChallengeJune2019.git
+```
+
+2.Copy the project to the www directory
+
+3.Create a database for your project
+
+4.Create an africastalking account if you do not already have one, and create an application.
+
+### For USSD
+
+4.Ensure you have create a channel and setup the call back URL
+
+5.Get the africa's talking app to test out the USSD
 
 
 
