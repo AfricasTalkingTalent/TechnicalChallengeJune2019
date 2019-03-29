@@ -1,109 +1,50 @@
-# Code Challenge for the June 2019 Cohort
+; These scripts were only tested with python 3.7
 
-Here's the challenge for anyone hoping to join the June to August Technical Internship Cohort at Africa's Talking. 
+# Task 1
+Solved in a fairly straightforward manner with recursion over filenames and binary search on a sorted array of characters
 
-## This challenge is due at 0900hrs EAT on 29th March 2019
+#Usage
 
-## Simple Unchanging Rules
-The code challenge is and will always be judged using the following criteria:
-  - A Correct fork, branch and pull request
-  - Using the GitHub Pull Request Time Stamp and correct code quality & structure, we unfortunately won't be able to consider any code challenge that goes over the timeline stated above.
-  - Code quality and structure will be evaluated by the team
-  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the platform.
-  - Complete both challenges below
+Run traversal.py from any directory you wish to investigate
 
-## Terms and Conditions
-You can participate on as many challenges as you wish:
-  - Do not share any code that you cannot opensource on the Git Repository as its open source and Africa's Talking will not be liable for any breach of intellectual property (if any) once shared on the platform.
-  - Code Challenges are time bound - the time restriction is specified on the challenge
-  - Additional rules MAY be provided on the code challenge and will vary for each challenge
-  - You are free to use your tools of choice as long as they fall under the rules of the challenge as below
-  - Only successful interviewies will be contacted for the next round of interviews
-
-## Code Challenge Bounty:
-  - A chance to work with some of the most brilliant minds in the world!
-  
-## Task 1
-##### Those structures though...
-##### Play around with these structures, make sure the logic and the approach are tight.
-
-With the assumption that you are using an object oriented programming language, write a program that given hundreds of documents, can find all documents with words containing the letter "a" in them.
-
-## Tips
-###### Map then reduce
-###### Comment your code to show your thought process
-###### You can submit this as a file in your pull request named "task 1"
-
-
-## Task 2
-##### Send and validate
-##### Play around with some of our products.
-
-Create a simple USSD + SMS app that does user registration.
-
-User journey: person dials the USSD Code and gets prompted for a username and email address. After which they get an SMS response telling them they've registered successfully
-
-## Resources: 
-- AT SDKs: https://github.com/AfricasTalkingLtd
-- Sandbox + Simulator: Which you access when you open your AT account
-- AT docs: http://docs.africastalking.com/
-
-## Tips
-###### Include run and dependency instructions in your README.md file or push a runnable file
-###### Comment your code to show your thought process
-###### Make sure your project is runnable for this task
-
-# Working on the Code Challenge
-1.Fork the code challenge repository provided.
-
-2.Make a topic branch. In your github form, keep the master branch clean. When you create a branch, it essentially will be a copy of the master.
-
->Pull all changes, make sure your repository is up to date
-
-```sh
-$ cd June_2019_Challenge
-$ git pull origin master
+```
+>python traversal.py
 ```
 
->Create a new branch as follows-> git checkout -b [your name], e.g.
+# Task 2
+; ```africastalking``` package is required. It is only available on PyPI.
 
-```sh
-$ git checkout -b roina_ochieng master
+```
+#Requires python3-pip installed
+>pip install africastalking
 ```
 
->See all branches created
+Solved using flask. The USSD code works fairly simply. Could be made better if sessions behaved the way I expected them to. Needs flask and ngrok to function.
 
-```sh
-$ git branch
-* roina_ochieng
-  master
+#Usage
+
+# For pip users:
+```
+>pip install flask
 ```
 
->Push the new branch to github
+# For conda users:
 
-```sh
-$ git push origin -u roina_ochieng
+```
+>conda install flask
 ```
 
-3.Make changes to the fork following the Code Challenge provided.
-
-4.Commit the changes to your fork.
-
-5.Make a pull request to the January_2019_UiUx_Challenge Repo.
-
-## Get Support from Africa's Talking
-In case you have any questions, reach out [the team](mailto:talent@africastalking.com) or the #internship_challenge Slack channel
-
-## Submissions later than 0900hrs EAT on 29th March 2019 will not be considered
-
-
-
-
-
-
-
-
-
-
-
-
+#Simply run ussd.py and attach ngrok to the listening port
+``` 
+>python ussd.py
+#Default port for flask is localhost:5000
+#Could be run from wherever ngrok is
+>./ngrok http 5000
+ 
+```
+#Current callback_url:
+```
+http://2426c52b.ngrok.io
+as at 28.03.2019 21:22:00
+USSD Channel: *384*741852# (Sandbox)
+```
