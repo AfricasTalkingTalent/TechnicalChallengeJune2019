@@ -1,4 +1,5 @@
 // import npm modules
+const bodyParser = require('body-parser');
 const express = require('express');
 const jade = require('jade');
 const path = require('path');
@@ -32,8 +33,15 @@ app.set('views', path.join(__dirname, '../views'));
 app.set('view engine', 'jade');
 
 // Africa's Talking API configuration
-APIConfig = require('./config');
-// const AfricasTalking = require('africastalking')(APIConfig);
+const creds = {
+  apiKey: 'ae18e1598bba0a0b54b13af0444e58653fdfaae0901d741b706e081091b912ab',
+  username: 'sandbox'
+};
+const AfricasTalking = require('africastalking')(creds);
+
+// configure body parser to accept json & form-data
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // tell the server what port to listen on
 const port = process.env.PORT || 3000;
