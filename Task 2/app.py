@@ -1,4 +1,5 @@
-#  Erick Ogaro, 2019.
+# Erick Ogaro
+# Date: 29th March, 2019.
 
 import africastalking
 
