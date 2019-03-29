@@ -31,14 +31,14 @@ africastalking.initialize(username, apikey)
 # Call the SMS service
 sms = africastalking.SMS
 
-# Define some options that we will use to send the SMS
+# What I used to send the SMS
 recipients = ['+254792835893']
 message = 'You have successfully registered your username and your e-mail'
 sender = '19256'
 
 # Send the SMS
+# The API's handles everything else
 try:
-    # Once this is done, that's it! We'll handle the rest
     response = sms.send(message, recipients, sender)
     print(response)
 except Exception as e:
