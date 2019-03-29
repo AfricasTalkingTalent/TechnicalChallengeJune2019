@@ -119,7 +119,7 @@ public class App {
             return response.build();
         });
         // Send SMS
-        post("/auth/register/:phone", (req, res) -> sms.send("Welcome to Awesome Company", "AT2FA", new String[] {req.params("phone")}, false), gson::toJson);
+        post("/auth/register/:phone", (req, res) -> sms.send("You have registered successfully", "AT2FA", new String[] {req.params("phone")}, false), gson::toJson);
     }
 
     private static String render(String view, Map data) {
