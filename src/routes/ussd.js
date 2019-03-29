@@ -7,7 +7,7 @@ const menu = new UssdMenu();
 // USSD routes
 router.get('/', (req, res) => {
     // res.render('ussd', res.locals.commonData);
-    res.render('ussd');
+    res.render('ussd.jade');
 });
 
 router.post('/', (req, res) => {
