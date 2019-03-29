@@ -1,0 +1,9 @@
+[33me4d637b[m HEAD@{0}: reset: moving to HEAD@{1}
+[33m2ff9568[m HEAD@{1}: reset: moving to HEAD~1
+[33me4d637b[m HEAD@{2}: commit: added task1.py
+[33m2ff9568[m HEAD@{3}: checkout: moving from feature to eugine_ochung
+[33m2ff9568[m HEAD@{4}: checkout: moving from develop to feature
+[33m2ff9568[m HEAD@{5}: checkout: moving from master to develop
+[33m2ff9568[m HEAD@{6}: checkout: moving from feature to master
+[33m2ff9568[m HEAD@{7}: checkout: moving from master to feature
+[33m2ff9568[m HEAD@{8}: clone: from https://github.com/EUGINELETHAL/TechnicalChallengeJune2019.git
