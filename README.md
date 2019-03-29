@@ -10,5 +10,7 @@ document / file handling.
 
 Task 2:
 *Language Used - Python*
+RUntime environment- Python 3
+Dependencies - Flask
 
 
