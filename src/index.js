@@ -39,6 +39,9 @@ const creds = {
 };
 const AfricasTalking = require('africastalking')(creds);
 
+// Initialize a service e.g. SMS
+const sms = AfricasTalking.SMS
+
 // configure body parser to accept json & form-data
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());

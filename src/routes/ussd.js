@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
     menu.state('registration', {
         run: () =>{
+            let phone = phoneNumber;
+            let session = getSession(menu.args.sessionId);
+            session.set('phoneNo', phone);
             menu.con('Welcome to the registration system. \n Enter your username');
         },
         next: {
@@ -38,10 +41,29 @@ router.post('/', (req, res) => {
             let session = getSession(menu.args.sessionId);
             session.set('email', email);
             menu.end("Congratulations. You have successfully been registered into the system. \n You'll be hearing from us soon.");
+
+
+            const sms = AfricasTalking.SMS;
+            const sendMessage = () => {
+                const options = {
+                    to: [session.get('phoneNo')],
+                    message: "Congratulations on your registration. You can access our services at the convenience of your mobile phone even without an internet connection.",
+                    from: '16905'
+                }
+            }
+            sms.send(options)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     });
+    sendMessage();
     return menu;
 });
+
 
 
 // router.post('/', (req, res) => {
