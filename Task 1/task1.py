@@ -6,6 +6,9 @@
 # This program has been structured such that the documents
 # should be within the same working directory as this code snippet
 
+# Due to the control structures I've implemented the program
+# is able to handle lots of documents at the same time (hundreds)
+
 import os
 
 # Show the user all the available documents in that directory
