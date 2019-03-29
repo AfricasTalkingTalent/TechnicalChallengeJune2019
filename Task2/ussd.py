@@ -1,38 +1,40 @@
-import os
+import africastalking
 from flask import Flask, request
 
+# initialize
 app = Flask(__name__)
+username = "sandbox"
+ 
+apikey = "2eb97013ea7b1ee3da4b2f902bed7392f4f6728dedd1831f2ad40fc6e1f1a156" 
 
-response = ""
+africastalking.initialize(username, apikey)
+sms = africastalking.SMS
 
-@app.route('/', methods = ['GET','POST'])
 
+#  route 
+@app.route('/')
+def index():
+    return ""
+
+
+@app.route('/ussd', methods = ['GET', 'POST'])
 def ussd():
-    global response
-    session_id = request.values.get("sessionId",None)
-    servicecode =  request.values.get("serviceCode",None)
-    phone_number = request.values.get("phoneNumber",None)
-    email =  request.values.get("email",None)
-    name = request.values.get("name",None)
-    text =  request.values.get("text",None)
+    text         = request.values.get("text", "default")
+    sessionId   = request.values.get("sessionId", None)
+    serviceCode  = request.values.get("serviceCode", None)
+    phoneNumber = request.values.get("phoneNumber", None)
+     
+    if text == '':
+        response = "Please enter your name \n"
+        response += "Please do not enter @ in your username \n"
 
-    response = "Whats your name: "
+    elif ('@' not in text) :
+        response = "Please enter your email address \n"
 
-
-    if text == "":
-        response = "Fill the details \n"
-        response += "1. Name\n"
-        response += "2. My Email\n"
-    elif text == "1":
-        response = "Write your name:\n"
-        name += " \n"
-    elif text == "2":
-        response = "Write your email:\n"
-        email += " \n"
     else:
-        response = "END Invalid choice"
+        response = "END You will receive an sms confirmation shortly"
+        sms.send("You have successfully registered.", [phoneNumber])
+    return response
 
-        return response
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0",port=os.environ.get("PORT"),debug=True)
+if __name__ == '__main__':
+    app.run()
