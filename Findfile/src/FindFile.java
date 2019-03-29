@@ -11,6 +11,7 @@ public class FindFile {
 		}
 		return afound;
 	}
+	//find a's in a file
 	public String Find_a(String file) {
 		try{
 	        BufferedReader buf = new BufferedReader(new FileReader(file));
